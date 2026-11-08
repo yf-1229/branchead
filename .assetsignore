@@ -1,0 +1,14 @@
+# Cloudflare Pages/GitHub 用のファイルのため同梱しない
+CNAME
+# 内部メモ・ドキュメント
+HANDOFF.md
+README.md
+# デプロイ設定
+wrangler.jsonc
+.assetsignore
+# Git
+.git
+.gitignore
+# Wranglerのキャッシュ・一時ファイル
+.wrangler
+node_modules

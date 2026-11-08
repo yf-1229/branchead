@@ -1,11 +1,11 @@
 {
   "name": "branchead",
   "short_name": "branchead",
-  "description": "情報と電気を横断する、ひとり会社のエンジニアリングスタジオ。",
+  "description": "大阪のひとり会社のエンジニアリングスタジオ。",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b0e0b",
-  "theme_color": "#0b0e0b",
+  "background_color": "#f5f4ee",
+  "theme_color": "#f5f4ee",
   "lang": "ja",
   "icons": [
     {
