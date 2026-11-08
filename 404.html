@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('bh-theme');
+        document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark';
+      } catch (_) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <title>404 — branchead</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0e0b">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="404" id="top">
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="branchead ホーム">
+        <span class="brand-name">branchead</span>
+        <span class="brand-reg">®</span>
+      </a>
+      <div class="header-actions" style="margin-left:auto">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="ライトテーマに切り替える">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.2A8.2 8.2 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.4"></circle><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="not-found" id="main">
+    <div class="page-wrap not-found__inner">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Signal lost <span class="eyebrow__sep">/</span> Error 404</p>
+      <h1>この分岐には、<br>何もない。</h1>
+      <p>お探しのページは、移動したか、まだ存在しません。URLをもう一度確認するか、下のリンクから戻ってください。</p>
+      <div class="not-found__actions">
+        <a class="button button--primary" href="index.html"><span>ホームへ戻る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></a>
+        <a class="button button--outline" href="projects.html"><span>プロジェクトを見る</span></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-wrap">
+      <div class="footer-bottom">
+        <span>© 2026 branchead</span>
+        <span>Tokyo, Japan — 35.6762° N / 139.6503° E</span>
+        <a href="index.html" class="back-to-top">Home <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "branchead",
+  "short_name": "branchead",
+  "description": "情報と電気を横断する、ひとり会社のエンジニアリングスタジオ。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0e0b",
+  "theme_color": "#0b0e0b",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

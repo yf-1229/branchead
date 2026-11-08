@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="ja" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('bh-theme');
+        document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark';
+      } catch (_) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <title>Projects — branchead</title>
+  <meta name="description" content="branchead のプロジェクト一覧。Androidアプリ、ゲーム、Linuxディストリビューション、組込み、データ分析。GitHub で公開している実装を6件の詳細とリポジトリ一覧で紹介します。">
+  <link rel="canonical" href="https://branchead.com/projects.html">
+  <meta name="theme-color" content="#0b0e0b">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="branchead">
+  <meta property="og:title" content="Projects — branchead">
+  <meta property="og:description" content="つくって、確かめて、動かす。GitHub で公開している、情報と電気のプロジェクト。">
+  <meta property="og:url" content="https://branchead.com/projects.html">
+  <meta property="og:image" content="https://branchead.com/assets/img/og.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="branchead ホーム" data-brand>
+        <span class="brand-name">branchead</span>
+        <span class="brand-reg">®</span>
+      </a>
+      <nav class="desktop-nav" aria-label="メインナビゲーション">
+        <a href="projects.html" data-nav="projects" aria-current="page">Projects<span>01</span></a>
+        <a href="about.html" data-nav="about">About<span>02</span></a>
+        <a href="contact.html" data-nav="contact">Contact<span>03</span></a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="ライトテーマに切り替える" title="テーマを切り替える">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.2A8.2 8.2 0 0 1 9.8 3.8 8.5 8.5 0 1 0 20.2 14.2Z"></path></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.4"></circle><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"></path></svg>
+        </button>
+        <a class="button button--primary button--header" href="contact.html">
+          <span>Start a project</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg>
+        </a>
+        <button class="menu-toggle" type="button" data-menu-open aria-label="メニューを開く" aria-haspopup="dialog"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <dialog class="menu-dialog" id="mobile-menu" aria-labelledby="menu-title">
+    <div class="menu-dialog__inner">
+      <div class="menu-dialog__top">
+        <span class="brand brand--menu">
+          <span class="brand-name">branchead</span>
+        </span>
+        <button class="menu-close" type="button" data-menu-close aria-label="メニューを閉じる">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+      <nav class="menu-nav" aria-label="モバイルナビゲーション">
+        <a href="index.html"><span class="menu-nav__num">00</span><span class="menu-nav__label" id="menu-title">Home</span><span class="menu-nav__jp">ホーム</span></a>
+        <a href="projects.html"><span class="menu-nav__num">01</span><span class="menu-nav__label">Projects</span><span class="menu-nav__jp">プロジェクト</span></a>
+        <a href="about.html"><span class="menu-nav__num">02</span><span class="menu-nav__label">About</span><span class="menu-nav__jp">プロフィール</span></a>
+        <a href="contact.html"><span class="menu-nav__num">03</span><span class="menu-nav__label">Contact</span><span class="menu-nav__jp">相談する</span></a>
+      </nav>
+      <div class="menu-dialog__foot">
+        <div><span class="micro-label">NEW BUSINESS</span><a href="mailto:hello@branchead.com">hello@branchead.com</a></div>
+        <p>Tokyo, Japan<br>35.6762° N / 139.6503° E</p>
+      </div>
+    </div>
+  </dialog>
+
+  <main id="main">
+    <section class="page-hero projects-hero" id="top">
+      <div class="page-wrap page-hero__inner">
+        <div class="page-hero__top">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Selected projects <span class="eyebrow__sep">/</span> GitHub — 2022—2026</p>
+          <p>アプリ、ゲーム、OS、組込み、データ。ひとつのリポジトリに、いくつもの分岐がある。</p>
+        </div>
+        <h1>つくって、<br>確かめて、<br><span class="accent">動かす。</span></h1>
+        <div class="page-hero__foot">
+          <p class="page-hero__lead">きれいなコンセプトより、動くもの。GitHub で公開しているリポジトリから、6件を選んで紹介します。カードを選ぶと、背景と実装の要点まで読めます。</p>
+          <div class="page-hero__meta">
+            <div><span>Repositories</span><span>15</span></div>
+            <div><span>Featured</span><span>06</span></div>
+            <div><span>Engineer</span><span>01</span></div>
+          </div>
+        </div>
+        <p class="page-hero__scroll">SCROLL TO INDEX</p>
+      </div>
+    </section>
+
+    <section class="projects-index" aria-labelledby="index-title">
+      <div class="page-wrap">
+        <h2 class="visually-hidden" id="index-title">プロジェクト一覧</h2>
+
+        <div class="projects-toolbar">
+          <div class="filter-group" role="group" aria-label="プロジェクトを絞り込む">
+            <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">All <span>06</span></button>
+            <button class="filter-chip" type="button" data-filter="apps" aria-pressed="false">Apps <span>04</span></button>
+            <button class="filter-chip" type="button" data-filter="embedded" aria-pressed="false">Embedded <span>02</span></button>
+            <button class="filter-chip" type="button" data-filter="games" aria-pressed="false">Games <span>03</span></button>
+            <button class="filter-chip" type="button" data-filter="systems" aria-pressed="false">Systems <span>01</span></button>
+          </div>
+          <p class="filter-count" data-filter-count aria-live="polite">06 / 06 projects</p>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card" data-categories="systems">
+            <a class="work-card__hit" href="#project-denkox" data-project-open aria-labelledby="work-title-denkox"><span class="visually-hidden">Denkox Linux の詳細を見る</span></a>
+            <div class="work-card__art art-signalmesh">
+              <svg class="art-signalmesh__mesh" viewBox="0 0 560 260" aria-hidden="true">
+                <g class="art-signalmesh__links"><path d="M88 160 176 82l92 64 86-84 92 72"></path><path d="M88 160h358M176 82v132M268 146v72M354 62v156M446 134v80"></path><path d="M88 160 268 218l178-84"></path></g>
+                <g class="art-signalmesh__nodes"><circle cx="88" cy="160" r="6"></circle><circle cx="176" cy="82" r="4"></circle><circle cx="268" cy="146" r="8"></circle><circle cx="268" cy="218" r="4"></circle><circle cx="354" cy="62" r="4"></circle><circle cx="446" cy="134" r="6"></circle><circle cx="446" cy="214" r="4"></circle></g>
+                <g class="art-signalmesh__rings"><circle cx="268" cy="146" r="28"></circle><circle cx="268" cy="146" r="48"></circle></g>
+              </svg>
+              <span class="art-signalmesh__tag">DENKOX / LIVE</span>
+              <span class="work-card__status"><span class="status-dot status-dot--small"></span>PUBLIC BUILD</span>
+              <span class="work-card__index">01 / 06</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__meta"><span>Systems / Education</span><span>2026</span></div>
+              <div class="work-card__title-row"><h2 id="work-title-denkox">Denkox Linux</h2><span class="arrow-bubble" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></span></div>
+              <p>日本の教育現場のための Debian ベース Linux。Chromebook と旧型 PC を、軽く、日本語で、安全に。</p>
+              <ul class="tag-list"><li>Debian</li><li>Xfce</li><li>live-build</li><li>bwrap</li></ul>
+            </div>
+          </article>
+
+          <article class="work-card" data-categories="apps embedded">
+            <a class="work-card__hit" href="#project-telliyaki" data-project-open aria-labelledby="work-title-telliyaki"><span class="visually-hidden">Telliyaki の詳細を見る</span></a>
+            <div class="work-card__art art-lab">
+              <div class="art-lab__board" aria-hidden="true">
+                <span class="art-lab__chip"></span>
+                <span class="art-lab__trace"></span>
+                <span class="art-lab__trace"></span>
+                <span class="art-lab__trace"></span>
+              </div>
+              <span class="art-lab__label">TELLIYAKI / BLOCK EDITOR</span>
+              <span class="work-card__status"><span class="status-dot status-dot--small"></span>BETA</span>
+              <span class="work-card__index">02 / 06</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__meta"><span>Android / Education</span><span>2026</span></div>
+              <div class="work-card__title-row"><h2 id="work-title-telliyaki">Telliyaki</h2><span class="arrow-bubble" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></span></div>
+              <p>Tello ドローンを、ブロックを並べて飛ばす。子ども向けの日本語 Android アプリ。</p>
+              <ul class="tag-list"><li>Kotlin</li><li>Compose</li><li>Tello SDK</li><li>UDP</li></ul>
+            </div>
+          </article>
+
+          <article class="work-card" data-categories="apps games">
+            <a class="work-card__hit" href="#project-cobroc" data-project-open aria-labelledby="work-title-cobroc"><span class="visually-hidden">coBroc の詳細を見る</span></a>
+            <div class="work-card__art art-loom">
+              <div class="art-loom__window" aria-hidden="true">
+                <span class="art-loom__query"><i></i> when_flag_clicked():</span>
+                <span class="art-loom__line art-loom__line--1"></span><span class="art-loom__line art-loom__line--2"></span><span class="art-loom__line art-loom__line--3"></span>
+                <span class="art-loom__chips"><b>EVENT</b><b>LOOP</b><b>AI</b></span>
+              </div>
+              <span class="art-loom__count">1 TURN / 2 PLAYERS</span>
+              <span class="work-card__status"><span class="status-dot status-dot--small"></span>PROTOTYPE</span>
+              <span class="work-card__index">03 / 06</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__meta"><span>Game / Education</span><span>2026</span></div>
+              <div class="work-card__title-row"><h2 id="work-title-cobroc">coBroc</h2><span class="arrow-bubble" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></span></div>
+              <p>ブロックコーディングを、ターン制の対戦ゲームに。AI と交互にブロックを置き、コードを完成させて実行する。</p>
+              <ul class="tag-list"><li>C++</li><li>Game</li><li>AI</li><li>STEM</li></ul>
+            </div>
+          </article>
+
+          <article class="work-card" data-categories="apps games">
+            <a class="work-card__hit" href="#project-hevonen" data-project-open aria-labelledby="work-title-hevonen"><span class="visually-hidden">Hevonen の詳細を見る</span></a>
+            <div class="work-card__art art-gridsight">
+              <div class="art-gridsight__grid" aria-hidden="true"></div>
+              <div class="art-gridsight__readout" aria-hidden="true">
+                <span>RACE 03 / WEATHER: SUN</span>
+                <strong>10<small>SHEEP</small></strong>
+                <em><span class="status-dot status-dot--small"></span> BET OPEN</em>
+              </div>
+              <svg class="art-gridsight__chart" viewBox="0 0 760 380" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="area-fill2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--secondary)" stop-opacity=".38"></stop>
+                    <stop offset="100%" stop-color="var(--secondary)" stop-opacity="0"></stop>
+                  </linearGradient>
+                </defs>
+                <g class="art-gridsight__rules"><path d="M0 80h760M0 160h760M0 240h760M0 320h760"></path><path d="M110 0v380M230 0v380M350 0v380M470 0v380M590 0v380M710 0v380"></path></g>
+                <path class="art-gridsight__area" d="M0 294C38 288 58 254 92 260s48 42 82 28 50-106 90-104 56 80 96 70 48-122 90-120 56 78 98 66 48-92 92-82 48 58 92 42 50-58 86-50v252H0Z" fill="url(#area-fill2)"></path>
+                <path class="art-gridsight__wave" d="M0 294C38 288 58 254 92 260s48 42 82 28 50-106 90-104 56 80 96 70 48-122 90-120 56 78 98 66 48-92 92-82 48 58 92 42 50-58 86-50"></path>
+                <circle class="art-gridsight__point" cx="698" cy="210" r="5"></circle>
+              </svg>
+              <span class="work-card__status"><span class="status-dot status-dot--small"></span>PLAYABLE</span>
+              <span class="work-card__index">04 / 06</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__meta"><span>Game / KMP</span><span>2026</span></div>
+              <div class="work-card__title-row"><h2 id="work-title-hevonen">Hevonen</h2><span class="arrow-bubble" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></span></div>
+              <p>羊を通貨に、馬に賭ける。天候と馬の能力で結果が変わる、Kotlin Multiplatform の競馬ゲーム。</p>
+              <ul class="tag-list"><li>Kotlin</li><li>Compose MP</li><li>Wasm</li><li>Canvas</li></ul>
+            </div>
+          </article>
+
+          <article class="work-card" data-categories="embedded games">
+            <a class="work-card__hit" href="#project-kiwine" data-project-open aria-labelledby="work-title-kiwine"><span class="visually-hidden">Kiwine の詳細を見る</span></a>
+            <div class="work-card__art art-fieldnote">
+              <div class="art-fieldnote__rows" aria-hidden="true"></div>
+              <div class="art-fieldnote__sun" aria-hidden="true"></div>
+              <div class="art-fieldnote__sensor" aria-hidden="true"></div>
+              <div class="art-fieldnote__readout" aria-hidden="true"><strong>20</strong><span>FPS / PICO 2</span></div>
+              <span class="art-fieldnote__tag">KIWI / RAIN / PINE</span>
+              <span class="work-card__status"><span class="status-dot status-dot--small"></span>PROTOTYPE</span>
+              <span class="work-card__index">05 / 06</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__meta"><span>Embedded / Game</span><span>2025—26</span></div>
+              <div class="work-card__title-row"><h2 id="work-title-kiwine">Kiwine</h2><span class="arrow-bubble" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></span></div>
+              <p>Pico 2 と 1.3 インチ LCD で動く、キーウィの小さなゲーム。松ぼっくりを食べ、雨を降らせて松を育てる。</p>
+              <ul class="tag-list"><li>Pico 2</li><li>C++</li><li>LCD</li><li>IR</li></ul>
+            </div>
+          </article>
+
+          <article class="work-card" data-categories="apps">
+            <a class="work-card__hit" href="#project-obserk" data-project-open aria-labelledby="work-title-obserk"><span class="visually-hidden">Obserk の詳細を見る</span></a>
+            <div class="work-card__art art-volt">
+              <div class="art-volt__dial" aria-hidden="true">
+                <div class="art-volt__scale"><i></i></div>
+                <div class="art-volt__needle"></div>
+              </div>
+              <div class="art-volt__value" aria-hidden="true"><strong>REC</strong><span>PEN / DETECTED</span></div>
+              <span class="work-card__status"><span class="status-dot status-dot--small"></span>ARCHIVED</span>
+              <span class="work-card__index">06 / 06</span>
+              <span class="art-volt__meta">OBSERK / FOCUS</span>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__meta"><span>Android / ML</span><span>2026</span></div>
+              <div class="work-card__title-row"><h2 id="work-title-obserk">Obserk</h2><span class="arrow-bubble" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></span></div>
+              <p>ペンを持っている時間だけを、勉強時間として記録する。カメラと TFLite で集中を可視化する Android アプリ。</p>
+              <ul class="tag-list"><li>Kotlin</li><li>Compose</li><li>TFLite</li><li>Room</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="repo-index">
+          <div class="repo-index__head reveal">
+            <div>
+              <p class="section-label">More <span>/</span> GitHub</p>
+              <h2>ほかのリポジトリ。</h2>
+            </div>
+            <p>6件の詳細に加えて、公開している実験とツール。気になるものは、そのまま GitHub へ。</p>
+          </div>
+          <ul class="repo-list">
+            <li><a href="https://github.com/yf-1229/PiNode" target="_blank" rel="noopener"><span class="repo-list__name">PiNode</span><span class="repo-list__desc">フォントにこだわった ToDo アプリ。タスクの状態をワンタップで切り替える。</span><span class="repo-list__meta">Kotlin / Android</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/tello-code" target="_blank" rel="noopener"><span class="repo-list__name">tello-code</span><span class="repo-list__desc">ブラウザで動く、Blockly 風の Tello ブロックプログラミング。WebSocket 経由で UDP 送信。</span><span class="repo-list__meta">JavaScript / Node</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/Opti9ns-" target="_blank" rel="noopener"><span class="repo-list__name">Opti9ns-</span><span class="repo-list__desc">現在地を OpenStreetMap に表示する、Compose 製の地図アプリ。</span><span class="repo-list__meta">Kotlin / Android</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/linux-update" target="_blank" rel="noopener"><span class="repo-list__name">linux-update</span><span class="repo-list__desc">apt / yum / brew / pacman の操作を、タイムスタンプ付きで記録するラッパー。</span><span class="repo-list__meta">Shell / CLI</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/groove-infrared_temp" target="_blank" rel="noopener"><span class="repo-list__name">groove-infrared_temp</span><span class="repo-list__desc">Raspberry Pi Pico と Grove の赤外線温度センサーを組み合わせた計測実験。</span><span class="repo-list__meta">C / Pico</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/pico_moisture" target="_blank" rel="noopener"><span class="repo-list__name">pico_moisture</span><span class="repo-list__desc">Grove の土壌水分センサーを ADC で読み、電圧と水分率に変換する。</span><span class="repo-list__meta">C++ / Pico</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/makeVideoToAA" target="_blank" rel="noopener"><span class="repo-list__name">makeVideoToAA</span><span class="repo-list__desc">YouTube の映像を ASCII アートに変換するスクリプト。FFmpeg を使用。</span><span class="repo-list__meta">Python / FFmpeg</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/Kaggle" target="_blank" rel="noopener"><span class="repo-list__name">Kaggle</span><span class="repo-list__desc">Titanic、House Prices、store sales の分析ノートブック。</span><span class="repo-list__meta">Python / Data</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+            <li><a href="https://github.com/yf-1229/ioebrff" target="_blank" rel="noopener"><span class="repo-list__name">ioebrff</span><span class="repo-list__desc">Termux 上で動く、Ruby 製の小さな IDE。</span><span class="repo-list__meta">Ruby / Archived</span><span class="repo-list__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 14 14 6M7 6h7v7"></path></svg></span></a></li>
+          </ul>
+        </div>
+
+        <div class="work-foot reveal">
+          <p>ARCHIVE 2022—2026 — <span>15 REPOSITORIES / 6 FEATURED</span></p>
+          <a class="button button--outline" href="https://github.com/yf-1229" target="_blank" rel="noopener"><span>GitHub ですべて見る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"></path></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-outro">
+      <div class="page-wrap about-outro__inner">
+        <div>
+          <p class="section-label">NEXT <span>/</span> YOUR PROJECT</p>
+          <h2>次は、あなたの<br>アイデアを動かす番。</h2>
+          <p>まだ図面になっていない構想でも構いません。何を作りたいのか、どこで詰まっているのか。まずは聞かせてください。</p>
+        </div>
+        <a class="button button--primary" href="contact.html"><span>プロジェクトを相談する</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="project-dialog" id="project-denkox" aria-labelledby="dialog-title-denkox">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="閉じる"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+      <div class="dialog-cover" data-index="01" style="--accent:#a8ea6a">
+        <div class="dialog-cover__content">
+          <span class="dialog-cover__kicker"><span class="status-dot status-dot--small"></span>Systems / Education — 2026</span>
+          <h2 id="dialog-title-denkox">Denkox Linux</h2>
+          <p>日本の教育現場のための Debian ベース Linux。Chromebook と旧型 PC を、軽く、日本語で、安全に。</p>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <dl class="dialog-meta">
+          <div><dt>Period</dt><dd>2026 —</dd></div>
+          <div><dt>Role</dt><dd>企画 / ビルド / 検証</dd></div>
+          <div><dt>Status</dt><dd>公開リポジトリ</dd></div>
+          <div><dt>Stack</dt><dd>Debian, live-build, Xfce</dd></div>
+        </dl>
+        <div class="dialog-sections">
+          <div class="dialog-section">
+            <h3>Challenge</h3>
+            <p>学校で使われる端末は Chromebook、旧型 Windows PC、持ち込みのノート PC とさまざまです。日本語入力、教育アプリ、ネットワーク分離、アップデートを最初から整えた状態で配るには、通常の Linux では設定の手間が大きすぎました。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Approach</h3>
+            <p>Debian の live-build で Lite / Standard / Full の3種類を構成。Xfce 4.20、fcitx5 + Mozc、LibreOffice / GCompris / Stellarium / Anki を収録し、Chromebook のタッチパッド・音声・電源管理を自動設定します。アプリとデスクトップを bwrap + OverlayFS で分離する denkox-sandbox と、専用の GRUB テーマも組み込みました。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Outcome</h3>
+            <p>Lite は約 1.2GB、4GB RAM で動作する構成。3つの variants とビルド手順、ISO の構成を公開しています。Chromebook と旧型 PC の両方を、同じ日本語環境で使えるところまでまとめました。</p>
+            <div class="dialog-result">
+              <div><strong>3</strong><span>variants</span></div>
+              <div><strong>1.2GB</strong><span>Lite ISO</span></div>
+              <div><strong>4GB</strong><span>最小 RAM</span></div>
+            </div>
+          </div>
+          <div class="dialog-section">
+            <h3>Stack</h3>
+            <ul><li>Debian</li><li>live-build</li><li>Xfce 4.20</li><li>fcitx5 + Mozc</li><li>bwrap</li><li>OverlayFS</li><li>GRUB</li></ul>
+          </div>
+        </div>
+        <div class="dialog-foot">
+          <p>PROJECT 01 / 06 — GITHUB</p>
+          <a class="text-link" href="https://github.com/yf-1229/denkox" target="_blank" rel="noopener"><span>GitHub で見る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="project-dialog" id="project-telliyaki" aria-labelledby="dialog-title-telliyaki">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="閉じる"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+      <div class="dialog-cover" data-index="02" style="--accent:#8cb8ff">
+        <div class="dialog-cover__content">
+          <span class="dialog-cover__kicker"><span class="status-dot status-dot--small"></span>Android / Education — 2026</span>
+          <h2 id="dialog-title-telliyaki">Telliyaki</h2>
+          <p>Tello ドローンを、ブロックを並べて飛ばす。子ども向けの日本語 Android アプリ。</p>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <dl class="dialog-meta">
+          <div><dt>Period</dt><dd>2026 —</dd></div>
+          <div><dt>Role</dt><dd>Android / UI / 通信</dd></div>
+          <div><dt>Status</dt><dd>ベータ</dd></div>
+          <div><dt>Stack</dt><dd>Kotlin, Compose, UDP</dd></div>
+        </dl>
+        <div class="dialog-sections">
+          <div class="dialog-section">
+            <h3>Challenge</h3>
+            <p>子どもがドローンの動きを視覚的に組み立て、実行する前に結果を想像できること。さらに、Tello との通信状態や映像を、アプリを切り替えずに扱える必要がありました。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Approach</h3>
+            <p>UI は 100% Jetpack Compose。基本操作 / 移動 / 回転 / 待機 / アクロ / くりかえしの6カテゴリのブロックを用意し、repeat のネスト、プログラムの保存、未保存の警告、プレビュー、実行、RC 操縦までを1つのアプリにまとめました。Tello へは UDP でコマンドを送り、映像ストリームをアプリ内で受信します。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Outcome</h3>
+            <p>ブロックエディタからプレビュー、実行、RC までを一通り操作できる Android アプリとしてベータ公開。子ども向けの日本語 UI と、通信・映像の状態表示を両立させています。</p>
+            <div class="dialog-result">
+              <div><strong>6</strong><span>block categories</span></div>
+              <div><strong>UDP</strong><span>control + video</span></div>
+              <div><strong>28</strong><span>min SDK</span></div>
+            </div>
+          </div>
+          <div class="dialog-section">
+            <h3>Stack</h3>
+            <ul><li>Kotlin</li><li>Jetpack Compose</li><li>Tello SDK</li><li>UDP</li><li>Android</li></ul>
+          </div>
+        </div>
+        <div class="dialog-foot">
+          <p>PROJECT 02 / 06 — GITHUB</p>
+          <a class="text-link" href="https://github.com/yf-1229/telliyaki_beta" target="_blank" rel="noopener"><span>GitHub で見る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="project-dialog" id="project-cobroc" aria-labelledby="dialog-title-cobroc">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="閉じる"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+      <div class="dialog-cover" data-index="03" style="--accent:#c9b6ff">
+        <div class="dialog-cover__content">
+          <span class="dialog-cover__kicker"><span class="status-dot status-dot--small"></span>Game / Education — 2026</span>
+          <h2 id="dialog-title-cobroc">coBroc</h2>
+          <p>ブロックコーディングを、ターン制の対戦ゲームに。AI と交互にブロックを置き、コードを完成させて実行する。</p>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <dl class="dialog-meta">
+          <div><dt>Period</dt><dd>2026 —</dd></div>
+          <div><dt>Role</dt><dd>企画 / ゲームデザイン / C++</dd></div>
+          <div><dt>Status</dt><dd>プロトタイプ</dd></div>
+          <div><dt>Stack</dt><dd>C++, AI, 2D</dd></div>
+        </dl>
+        <div class="dialog-sections">
+          <div class="dialog-section">
+            <h3>Challenge</h3>
+            <p>プログラミング学習の最初の壁を下げること。短時間で遊べて、低リソースでも動き、単なるパズルではなく対戦ゲームとして成立することが目標でした。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Approach</h3>
+            <p>AI と1手ずつブロックを置くターン制にしました。盤面でコードを組み立て、完成したコードを実行して結果を見るループです。短時間 × ブロックプログラミング × 低リソースを設計目標に、C++ で実装しています。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Outcome</h3>
+            <p>ブロックを置く → コードが完成する → 実行する、という一連のループをプロトタイプとして公開。README には開発中の画面と、ゲームの考え方を掲載しています。</p>
+            <div class="dialog-result">
+              <div><strong>1v1</strong><span>vs AI</span></div>
+              <div><strong>RUN</strong><span>completed code</span></div>
+              <div><strong>C++</strong><span>implementation</span></div>
+            </div>
+          </div>
+          <div class="dialog-section">
+            <h3>Stack</h3>
+            <ul><li>C++</li><li>Game loop</li><li>AI</li><li>Block programming</li><li>STEM</li></ul>
+          </div>
+        </div>
+        <div class="dialog-foot">
+          <p>PROJECT 03 / 06 — GITHUB</p>
+          <a class="text-link" href="https://github.com/yf-1229/coBroc" target="_blank" rel="noopener"><span>GitHub で見る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="project-dialog" id="project-hevonen" aria-labelledby="dialog-title-hevonen">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="閉じる"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+      <div class="dialog-cover" data-index="04" style="--accent:#ffad7d">
+        <div class="dialog-cover__content">
+          <span class="dialog-cover__kicker"><span class="status-dot status-dot--small"></span>Game / KMP — 2026</span>
+          <h2 id="dialog-title-hevonen">Hevonen</h2>
+          <p>羊を通貨に、馬に賭ける。天候と馬の能力で結果が変わる、Kotlin Multiplatform の競馬ゲーム。</p>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <dl class="dialog-meta">
+          <div><dt>Period</dt><dd>2026 —</dd></div>
+          <div><dt>Role</dt><dd>企画 / KMP / UI</dd></div>
+          <div><dt>Status</dt><dd>プレイ可能</dd></div>
+          <div><dt>Stack</dt><dd>Kotlin, Compose MP, Wasm</dd></div>
+        </dl>
+        <div class="dialog-sections">
+          <div class="dialog-section">
+            <h3>Challenge</h3>
+            <p>同じゲームロジックと UI を Android / iOS / Web で動かすこと。レースごとに天候が変わり、6頭の能力と乱数で結果が変わるゲームバランスも必要でした。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Approach</h3>
+            <p>Kotlin Multiplatform + Compose Multiplatform を採用し、commonMain にゲームロジックと UI を置いて Android / iOS / Wasm の3ターゲットへ展開。馬は Compose Canvas のポリゴンで描画し、100体の NPC が賭けに参加します。天候は晴れ・雨・風の3種類で、レース結果に影響します。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Outcome</h3>
+            <p>3ターゲットでビルドできる構成。6頭の馬、100体の NPC、縦方向のレースコース、羊を通貨にした賭けのループを実装しました。</p>
+            <div class="dialog-result">
+              <div><strong>3</strong><span>targets</span></div>
+              <div><strong>6</strong><span>horses</span></div>
+              <div><strong>100</strong><span>NPCs</span></div>
+            </div>
+          </div>
+          <div class="dialog-section">
+            <h3>Stack</h3>
+            <ul><li>Kotlin Multiplatform</li><li>Compose Multiplatform</li><li>Wasm</li><li>Canvas</li></ul>
+          </div>
+        </div>
+        <div class="dialog-foot">
+          <p>PROJECT 04 / 06 — GITHUB</p>
+          <a class="text-link" href="https://github.com/yf-1229/Hevonen" target="_blank" rel="noopener"><span>GitHub で見る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="project-dialog" id="project-kiwine" aria-labelledby="dialog-title-kiwine">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="閉じる"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+      <div class="dialog-cover" data-index="05" style="--accent:#d6ed9d">
+        <div class="dialog-cover__content">
+          <span class="dialog-cover__kicker"><span class="status-dot status-dot--small"></span>Embedded / Game — 2025—26</span>
+          <h2 id="dialog-title-kiwine">Kiwine</h2>
+          <p>Pico 2 と 1.3 インチ LCD で動く、キーウィの小さなゲーム。松ぼっくりを食べ、雨を降らせて松を育てる。</p>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <dl class="dialog-meta">
+          <div><dt>Period</dt><dd>2025.12 — 2026.01</dd></div>
+          <div><dt>Role</dt><dd>企画 / C++ / 組み込み</dd></div>
+          <div><dt>Status</dt><dd>プロトタイプ</dd></div>
+          <div><dt>Stack</dt><dd>C++, Pico SDK, LCD</dd></div>
+        </dl>
+        <div class="dialog-sections">
+          <div class="dialog-section">
+            <h3>Challenge</h3>
+            <p>小さな MCU と 1.3 インチ LCD で、入力・描画・ゲームロジックを同時に動かすこと。IR リモコンの操作を、ゲームの動きに自然に落とし込む必要がありました。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Approach</h3>
+            <p>Pico SDK で2コアを使い、ゲームロジックと描画を分担。50ms 間隔（約20 FPS）で LCD を更新します。IR リモコン、松ぼっくり、雨、松の成長、キーウィの状態を実装し、LCD / GUI ライブラリと YDF モデルを組み込みました。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Outcome</h3>
+            <p>Pico 2 + 1.3 インチ LCD で動作するプロトタイプ。キーウィを操作し、松ぼっくりで回復しながら、雨を降らせて松を育てるゲームループになりました。</p>
+            <div class="dialog-result">
+              <div><strong>Pico 2</strong><span>board</span></div>
+              <div><strong>1.3in</strong><span>LCD</span></div>
+              <div><strong>20fps</strong><span>refresh</span></div>
+            </div>
+          </div>
+          <div class="dialog-section">
+            <h3>Stack</h3>
+            <ul><li>C++</li><li>Pico SDK</li><li>1.3" LCD</li><li>IR remote</li><li>Multicore</li></ul>
+          </div>
+        </div>
+        <div class="dialog-foot">
+          <p>PROJECT 05 / 06 — GITHUB</p>
+          <a class="text-link" href="https://github.com/yf-1229/Kiwine" target="_blank" rel="noopener"><span>GitHub で見る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="project-dialog" id="project-obserk" aria-labelledby="dialog-title-obserk">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="閉じる"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+      <div class="dialog-cover" data-index="06" style="--accent:#ffc08f">
+        <div class="dialog-cover__content">
+          <span class="dialog-cover__kicker"><span class="status-dot status-dot--small"></span>Android / ML — 2026</span>
+          <h2 id="dialog-title-obserk">Obserk</h2>
+          <p>ペンを持っている時間だけを、勉強時間として記録する。カメラと TFLite で集中を可視化する Android アプリ。</p>
+        </div>
+      </div>
+      <div class="dialog-body">
+        <dl class="dialog-meta">
+          <div><dt>Period</dt><dd>2026.01</dd></div>
+          <div><dt>Role</dt><dd>Android / ML / UI</dd></div>
+          <div><dt>Status</dt><dd>アーカイブ</dd></div>
+          <div><dt>Stack</dt><dd>Kotlin, Compose, TFLite</dd></div>
+        </dl>
+        <div class="dialog-sections">
+          <div class="dialog-section">
+            <h3>Challenge</h3>
+            <p>タイマーを回すだけでは、実際に集中していた時間は分かりません。ペンを持っているかどうかを端末内で判定し、記録が途切れた時間も含めて扱う必要がありました。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Approach</h3>
+            <p>カメラ映像を TFLite のペン保持判定モデルに渡し、ペンが検出されている間だけ記録。Foreground service で記録を継続し、Room に学習ログを保存します。記録時間と中断時間から効率 (%) を算出し、グラフで表示。UI は Compose で構成しました。</p>
+          </div>
+          <div class="dialog-section">
+            <h3>Outcome</h3>
+            <p>ペン検出による記録の継続 / 中断、効率の可視化、学習ログの編集を実装。リポジトリはアーカイブとして公開しています。</p>
+            <div class="dialog-result">
+              <div><strong>PEN</strong><span>detection</span></div>
+              <div><strong>%</strong><span>efficiency</span></div>
+              <div><strong>ROOM</strong><span>study logs</span></div>
+            </div>
+          </div>
+          <div class="dialog-section">
+            <h3>Stack</h3>
+            <ul><li>Kotlin</li><li>Jetpack Compose</li><li>TFLite</li><li>Room</li><li>Camera</li><li>Foreground service</li></ul>
+          </div>
+        </div>
+        <div class="dialog-foot">
+          <p>PROJECT 06 / 06 — GITHUB</p>
+          <a class="text-link" href="https://github.com/yf-1229/Obserk" target="_blank" rel="noopener"><span>GitHub で見る</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M7 6h7v7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="page-wrap">
+      <div class="footer-top">
+        <a class="footer-brand" href="index.html" aria-label="branchead ホーム"><span>branchead</span><sup>®</sup></a>
+        <p class="footer-tagline">情報と電気のあいだに、<br>次の分岐点をつくる。</p>
+        <div class="footer-nav">
+          <div>
+            <span class="footer-nav__title">Sitemap</span>
+            <a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+          </div>
+          <div>
+            <span class="footer-nav__title">Info</span>
+            <span class="footer-nav__static">Tokyo, Japan</span>
+            <span class="footer-nav__static">2026 Q4 — Open</span>
+            <span class="footer-nav__static">Reply in 2 days</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 branchead</span>
+        <span>Tokyo, Japan — 35.6762° N / 139.6503° E</span>
+        <a href="#top" class="back-to-top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
