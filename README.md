@@ -7,7 +7,7 @@
 
 | ファイル | 内容 |
 | --- | --- |
-| `index.html` | 唯一のページ。スタジオ概要 / プロジェクト5件 / 連絡先（X） |
+| `index.html` | 唯一のページ。スタジオ概要 / プロジェクト4件 / 連絡先（X） |
 | `404.html` | 404 ページ |
 | `assets/css/simple.css` | モノクロ罫線のスタイル（角丸・影・色なし） |
 | `assets/js/main.js` | スクロールで罫線が開くアニメーションと、連絡先のコピー |
@@ -15,9 +15,8 @@
 ## 内容
 
 - スタジオ概要: Engineering Studio / Osaka / Est. 2026 / Engineer 1
-- 稼働中のプロジェクト5件のみ掲載
-  - oclabo — oclabo.branchead.com（チーム用データ管理）
-  - brancHead — block-thinking.branchead.com（設計判断の記録）
+- 稼働中のプロジェクト4件のみ掲載
+  - oclabo — oclabo.branchead.com（チーム運営）
   - Cycload — cycload.branchead.com（自転車通行困難マップ）
   - mask — mask.branchead.com（LLM 向け PII 匿名化ゲートウェイ）
   - branchead-home — branchead.com（このサイト）
